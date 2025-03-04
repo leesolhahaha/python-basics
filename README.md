@@ -57,6 +57,32 @@
    - `try-except` 블록 활용  
    - `finally`와 `raise`  
 
+## 11. 정규식 (Regular Expressions) 🔍
+
+정규식은 문자열에서 특정 패턴을 검색하거나 조작할 때 사용하는 강력한 도구입니다. 파이썬에서는 `re` 모듈을 사용하여 정규식을 다룰 수 있습니다.
+
+### **주요 함수**
+- `re.match()` : 문자열의 시작에서 정규식과 일치하는지 확인
+- `re.search()` : 문자열에서 첫 번째로 일치하는 부분을 찾음
+- `re.findall()` : 일치하는 모든 부분을 리스트로 반환
+- `re.sub()` : 문자열에서 정규식과 일치하는 부분을 다른 문자열로 교체
+
+### **정규식 기본 문법**
+- `.` : 임의의 문자
+- `\d` : 숫자 (0-9)
+- `\w` : 알파벳이나 숫자
+- `\s` : 공백 문자
+- `*`, `+`, `?` : 반복 횟수 지정
+
+### **정규식 예제**
+```python
+import re
+
+# 이메일 추출
+text = "문의사항은 contact@example.com 또는 info@domain.com으로 보내주세요."
+emails = re.findall(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b", text)
+print(emails)  # ['contact@example.com', 'info@domain.com']
+
 ## 🛠 환경 설정 (Setup)  
 
 ### 📌 필수 환경  
